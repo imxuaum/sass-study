@@ -1,0 +1,24 @@
+body {
+  background-color: #7159c1;
+  color: white;
+}
+
+.container {
+  -webkit-box-shadow: 4px 4px 4px -4px rgba(0, 0, 0, 0.6);
+          box-shadow: 4px 4px 4px -4px rgba(0, 0, 0, 0.6);
+  width: 200px;
+  height: 200px;
+  background-color: white;
+  color: orange;
+}
+
+.container p {
+  -webkit-box-shadow: 4px 4px 4px -4px rgba(0, 0, 0, 0.6);
+          box-shadow: 4px 4px 4px -4px rgba(0, 0, 0, 0.6);
+  background-color: green;
+  width: 100px;
+  height: 100px;
+  color: blue;
+  font-weight: bold;
+}
+/*# sourceMappingURL=main.css.map */
