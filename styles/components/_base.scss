@@ -1,16 +1,38 @@
 $text-color: white;
+$colors: (color1: blue, color2: red, color3: yellow);
 
+// Functions
 @mixin box-shadow($color) {
-    box-shadow: 4px 4px 4px -4px $color;
+    box-shadow: 2px 4px 2px -2px $color;
 }
 
+// Condições
 @mixin make-bold($bool) {
     @if $bool == true {
         font-weight: bold;
     }
 }
 
+@mixin text-effect($val) {
+    @if $val == danger {
+        color: red;
+    }
+    @else if $val == alert {
+        color: yellow;
+    }
+    @else {
+        color: black;
+    }
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 body {
+    @extend .flex; // Herança
     background-color: #7159c1;
     color: $text-color;
 }
@@ -28,7 +50,25 @@ body {
         background-color: green;
         width: 100px;
         height: 100px;
-        color: blue;
+        @include text-effect(danger);
         @include make-bold(true)
+    }
+}
+
+// Estrutura de repetição
+@for $i from 1 through 5 {
+    .text-#{$i} {
+        font-size: 15px * $i;
+    }
+}
+
+@each $key, $color in $colors {
+    .#{$color}-text { color: $color; }
+}
+
+p {
+    color: red;
+    &:hover {
+        color: pink;
     }
 }
